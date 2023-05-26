@@ -26,53 +26,97 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         child: SafeArea(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 250,
-                width: width,
-                child: Row(
-                  children: [
-                    Container(
-                      width: 100,
-                      height: height,
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 14,
-                        vertical: 10,
-                      ),
-                      decoration: BoxDecoration(
-                        color: whiteColor,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 14),
+            child: Column(
+              children: [
+                Container(
+                  height: 250,
+                  width: width,
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 100,
                         height: height,
-                        margin: const EdgeInsets.symmetric(
-                          horizontal: 14,
-                          vertical: 10,
-                        ).copyWith(left: 0),
+                        margin: const EdgeInsets.only(right: 14),
                         decoration: BoxDecoration(
                           color: whiteColor,
                           borderRadius: BorderRadius.circular(30),
                         ),
                       ),
-                    )
-                  ],
+                      Expanded(
+                        child: Container(
+                          height: height,
+                          decoration: BoxDecoration(
+                            color: whiteColor,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-              Expanded(
-                child: Container(
+                Expanded(
+                  child: Container(
+                    width: width,
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 250,
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  width: width * .4,
+                                  height: height,
+                                  margin: const EdgeInsets.only(right: 14),
+                                  decoration: BoxDecoration(
+                                    color: whiteColor,
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  width: width * .4,
+                                  height: height,
+                                  decoration: BoxDecoration(
+                                    color: whiteColor,
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            height: 80,
+                            width: width,
+                            margin: const EdgeInsets.symmetric(vertical: 10),
+                            decoration: BoxDecoration(
+                              color: whiteColor,
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 80,
                   width: width,
-                  color: Colors.transparent,
+                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  decoration: BoxDecoration(
+                    color: whiteColor,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
                 ),
-              ),
-              Container(
-                height: 100,
-                width: width,
-                color: Colors.amberAccent,
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
