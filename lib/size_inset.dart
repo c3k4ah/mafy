@@ -1,0 +1,1 @@
+double radiusWidget = 20;

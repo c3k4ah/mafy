@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'colors.dart';
+import 'size_inset.dart';
+import 'widgets/widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -36,21 +38,14 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Row(
                     children: [
-                      Container(
-                        width: 100,
-                        height: height,
-                        margin: const EdgeInsets.only(right: 14),
-                        decoration: BoxDecoration(
-                          color: whiteColor,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
+                      DayLinesWidget(
+                        size: Size(100, height),
                       ),
                       Expanded(
-                        child: Container(
-                          height: height,
-                          decoration: BoxDecoration(
-                            color: whiteColor,
-                            borderRadius: BorderRadius.circular(30),
+                        child: CalendarWidget(
+                          size: Size(
+                            width,
+                            height,
                           ),
                         ),
                       )
@@ -74,7 +69,8 @@ class _HomePageState extends State<HomePage> {
                                   margin: const EdgeInsets.only(right: 14),
                                   decoration: BoxDecoration(
                                     color: whiteColor,
-                                    borderRadius: BorderRadius.circular(30),
+                                    borderRadius:
+                                        BorderRadius.circular(radiusWidget),
                                   ),
                                 ),
                               ),
@@ -84,7 +80,8 @@ class _HomePageState extends State<HomePage> {
                                   height: height,
                                   decoration: BoxDecoration(
                                     color: whiteColor,
-                                    borderRadius: BorderRadius.circular(30),
+                                    borderRadius:
+                                        BorderRadius.circular(radiusWidget),
                                   ),
                                 ),
                               ),
@@ -98,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                             margin: const EdgeInsets.symmetric(vertical: 10),
                             decoration: BoxDecoration(
                               color: whiteColor,
-                              borderRadius: BorderRadius.circular(30),
+                              borderRadius: BorderRadius.circular(radiusWidget),
                             ),
                           ),
                         ),
@@ -112,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                   margin: const EdgeInsets.symmetric(vertical: 10),
                   decoration: BoxDecoration(
                     color: whiteColor,
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(radiusWidget),
                   ),
                 ),
               ],
