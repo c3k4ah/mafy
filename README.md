@@ -4,11 +4,11 @@ Android Launcher build with FLUTTER.
 
 ## Widgets couramment utilisés que l'on peut envisager d'inclure sur l'écran d'accueil :
 
-- [ ] Horloge/Date : Un widget affichant l'heure et la date actuelles est généralement présent sur la plupart des lanceurs. Il peut également inclure des fonctionnalités telles que des alarmes et des minuteries.
+- [x] Horloge/Date : Un widget affichant l'heure et la date actuelles est généralement présent sur la plupart des lanceurs. Il peut également inclure des fonctionnalités telles que des alarmes et des minuteries.
 
-- [ ] Météo : Un widget météo peut fournir des informations en temps réel sur les conditions météorologiques, telles que la température, les prévisions, les icônes météo, etc. Il peut être personnalisable pour afficher la météo actuelle et celle des prochains jours.
+- [x] Météo : Un widget météo peut fournir des informations en temps réel sur les conditions météorologiques, telles que la température, les prévisions, les icônes météo, etc. Il peut être personnalisable pour afficher la météo actuelle et celle des prochains jours.
 
-- [ ] Calendrier : Un widget de calendrier permet aux utilisateurs de visualiser leurs événements et leurs rendez-vous à venir directement depuis l'écran d'accueil. Il peut afficher les rendez-vous du jour, du mois ou de la semaine.
+- [x] Calendrier : Un widget de calendrier permet aux utilisateurs de visualiser leurs événements et leurs rendez-vous à venir directement depuis l'écran d'accueil. Il peut afficher les rendez-vous du jour, du mois ou de la semaine.
 
 - [ ] Recherche : Un widget de recherche intégré facilite la recherche rapide d'applications, de contacts, de fichiers, de musique ou de tout autre contenu sur l'appareil. Il peut être configuré pour utiliser différentes sources de recherche, telles que la recherche Web ou la recherche interne.
 
