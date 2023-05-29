@@ -1,6 +1,7 @@
 import 'package:flutter/painting.dart';
 
-Color primaryColor = const Color(0xffFE5944);
-Color secondaryColor = const Color(0xffe34c3b);
-Color tertioColor = const Color(0xffFFD340);
+Color darkPrimaryColor = const Color(0xff041C32);
+Color primaryColor = const Color(0xff04293A);
+Color secondaryColor = const Color(0xff064663);
+Color tertioColor = const Color(0xffECB365);
 Color whiteColor = const Color(0xffFFFFFF);

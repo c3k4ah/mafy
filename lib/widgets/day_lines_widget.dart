@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mafy/widgets/widget.dart';
 
 import '../colors.dart';
 import '../size_inset.dart';
@@ -17,7 +18,7 @@ class DayLinesWidget extends StatelessWidget {
       height: size.height,
       margin: const EdgeInsets.only(right: 14),
       decoration: BoxDecoration(
-        color: Colors.green.shade200,
+        color: primaryColor,
         borderRadius: BorderRadius.circular(radiusWidget),
       ),
       child: Column(
@@ -26,10 +27,7 @@ class DayLinesWidget extends StatelessWidget {
             height: 145,
             width: size.width,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(radiusWidget),
-                topRight: Radius.circular(radiusWidget),
-              ),
+              borderRadius: topRadius(),
               image: const DecorationImage(
                 image: AssetImage('assets/images/daystep1.jpg'),
                 fit: BoxFit.cover,
@@ -59,13 +57,12 @@ class DayLinesWidget extends StatelessWidget {
               width: size.width,
               margin: const EdgeInsets.all(5),
               decoration: BoxDecoration(
-                color: Colors.green.shade800,
+                color: whiteColor,
                 shape: BoxShape.circle,
-                // borderRadius: BorderRadius.circular(radiusWidget),
               ),
               child: Icon(
                 Icons.sunny,
-                color: whiteColor,
+                color: primaryColor,
               ),
             ),
           ),
@@ -73,16 +70,13 @@ class DayLinesWidget extends StatelessWidget {
             height: 30,
             width: size.width,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(radiusWidget),
-                bottomRight: Radius.circular(radiusWidget),
-              ),
+              borderRadius: bottomRadius(),
             ),
             child: Text(
               '24C',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.green.shade800,
+                color: whiteColor,
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),

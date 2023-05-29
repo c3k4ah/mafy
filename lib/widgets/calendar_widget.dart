@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:clean_calendar/clean_calendar.dart';
 import 'package:flutter/material.dart';
+import 'package:mafy/widgets/widget.dart';
 
 import '../colors.dart';
 import '../size_inset.dart';
@@ -26,27 +27,30 @@ class CalendarWidget extends StatelessWidget {
             margin: const EdgeInsets.only(
               bottom: 15,
             ),
-            child: const CleanCalendar(
+            child: CleanCalendar(
               datePickerCalendarView: DatePickerCalendarView.weekView,
               startWeekday: WeekDay.monday,
+              currentDateProperties: DatesProperties(
+                  datesDecoration: DatesDecoration(
+                datesBackgroundColor: tertioColor,
+                datesTextColor: whiteColor,
+                datesBorderColor: darkPrimaryColor,
+              )),
             ),
           ),
           Expanded(
             child: Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: Colors.grey.shade200,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(radiusWidget),
-                  bottomRight: Radius.circular(radiusWidget),
-                ),
+                color: tertioColor,
+                borderRadius: bottomRadius(),
               ),
-              child: const Center(
+              child: Center(
                 child: Text(
                   "Le succès n'est pas final, l'échec n'est pas fatal. C'est le courage de continuer qui compte",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.black,
+                    color: whiteColor,
                     fontSize: 13,
                   ),
                 ),
