@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 import '../colors.dart';
@@ -24,7 +23,7 @@ class DayLinesWidget extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 130,
+            height: 145,
             width: size.width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
@@ -71,7 +70,7 @@ class DayLinesWidget extends StatelessWidget {
             ),
           ),
           Container(
-            height: 40,
+            height: 30,
             width: size.width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
@@ -84,7 +83,7 @@ class DayLinesWidget extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.green.shade800,
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
             ),

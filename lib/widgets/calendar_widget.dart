@@ -20,8 +20,40 @@ class CalendarWidget extends StatelessWidget {
         color: whiteColor,
         borderRadius: BorderRadius.circular(radiusWidget),
       ),
-      child: const CleanCalendar(
-        datePickerCalendarView: DatePickerCalendarView.weekView,
+      child: Column(
+        children: [
+          Container(
+            margin: const EdgeInsets.only(
+              bottom: 15,
+            ),
+            child: const CleanCalendar(
+              datePickerCalendarView: DatePickerCalendarView.weekView,
+              startWeekday: WeekDay.monday,
+            ),
+          ),
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade200,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(radiusWidget),
+                  bottomRight: Radius.circular(radiusWidget),
+                ),
+              ),
+              child: const Center(
+                child: Text(
+                  "Le succès n'est pas final, l'échec n'est pas fatal. C'est le courage de continuer qui compte",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 13,
+                  ),
+                ),
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
