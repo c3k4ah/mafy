@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mafy/models/daystage_model.dart';
 import 'package:mafy/widgets/widget.dart';
 
 import '../colors.dart';
 import '../size_inset.dart';
+import '../utils/daystages.dart';
 
 class DayLinesWidget extends StatelessWidget {
   final Size size;
@@ -13,6 +15,7 @@ class DayLinesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DayStageModel stage = getCurrentStage();
     return Container(
       width: size.width,
       height: size.height,
@@ -28,8 +31,8 @@ class DayLinesWidget extends StatelessWidget {
             width: size.width,
             decoration: BoxDecoration(
               borderRadius: topRadius(),
-              image: const DecorationImage(
-                image: AssetImage('assets/images/daystep1.jpg'),
+              image: DecorationImage(
+                image: AssetImage(stage.urlImage),
                 fit: BoxFit.cover,
               ),
             ),
@@ -40,7 +43,7 @@ class DayLinesWidget extends StatelessWidget {
                   width: size.width,
                   height: 30,
                   child: Text(
-                    '06:34',
+                    '${DateTime.now().hour}:${DateTime.now().minute}',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: whiteColor,
