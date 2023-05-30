@@ -5,6 +5,7 @@ import 'package:mafy/widgets/widget.dart';
 import '../colors.dart';
 import '../size_inset.dart';
 import '../utils/daystages.dart';
+import '../utils/parsing.dart';
 
 class DayLinesWidget extends StatelessWidget {
   final Size size;
@@ -16,12 +17,14 @@ class DayLinesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     DayStageModel stage = getCurrentStage(DateTime.now());
+    String hour = addZero(DateTime.now().hour);
+    String min = addZero(DateTime.now().minute);
     return Container(
       width: size.width,
       height: size.height,
       margin: const EdgeInsets.only(right: 14),
       decoration: BoxDecoration(
-        color: primaryColor,
+        color: secondaryColor,
         borderRadius: BorderRadius.circular(radiusWidget),
       ),
       child: Column(
@@ -43,7 +46,7 @@ class DayLinesWidget extends StatelessWidget {
                   width: size.width,
                   height: 30,
                   child: Text(
-                    '${DateTime.now().hour}:${DateTime.now().minute}',
+                    '$hour:$min',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: whiteColor,
@@ -65,7 +68,7 @@ class DayLinesWidget extends StatelessWidget {
               ),
               child: Icon(
                 Icons.sunny,
-                color: primaryColor,
+                color: secondaryColor,
               ),
             ),
           ),

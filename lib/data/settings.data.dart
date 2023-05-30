@@ -13,14 +13,6 @@ List<SettingsModel> settingList = [
     ),
   ),
   SettingsModel(
-    name: "Bluetooth",
-    colors: [Colors.blue.shade700, whiteColor],
-    icon: Icon(
-      Icons.bluetooth,
-      color: Colors.blue.shade700,
-    ),
-  ),
-  SettingsModel(
     name: "Mode avion",
     colors: [secondaryColor, tertioColor],
     icon: Icon(
@@ -29,8 +21,16 @@ List<SettingsModel> settingList = [
     ),
   ),
   SettingsModel(
-    name: "Light Mode",
-    colors: [whiteColor, tertioColor],
+    name: "Bluetooth",
+    colors: [Colors.blue.shade700, whiteColor],
+    icon: Icon(
+      Icons.bluetooth,
+      color: Colors.blue.shade700,
+    ),
+  ),
+  SettingsModel(
+    name: "Luminosité",
+    colors: [whiteColor, secondaryColor],
     icon: Icon(
       Icons.light_mode,
       color: whiteColor,
