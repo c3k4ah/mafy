@@ -15,7 +15,7 @@ class DayLinesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DayStageModel stage = getCurrentStage();
+    DayStageModel stage = getCurrentStage(DateTime.now());
     return Container(
       width: size.width,
       height: size.height,

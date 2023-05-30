@@ -1,41 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:mafy/models/daystage_model.dart';
 
-DayStageModel getCurrentStage() {
-  int currentHour = DateTime.now().hour;
-  int currentMinute = DateTime.now().minute;
-  if (currentHour >= 4 && currentHour < 6) {
-    //entre 04 et 6h
+DayStageModel getCurrentStage(DateTime dnow) {
+  int currentHour = dnow.hour;
+  if (currentHour >= 5 && currentHour < 7) {
+    //entre 05 et 7h
     return DayStageModel(
       range: DateTimeRange(
-        start: DateTime.now().copyWith(hour: 04, minute: 01),
-        end: DateTime.now().copyWith(hour: 05, minute: 59),
+        start: DateTime.now().copyWith(hour: 05, minute: 01),
+        end: DateTime.now().copyWith(hour: 06, minute: 59),
       ),
       name: 'sunrise',
       urlImage: 'assets/images/day_stages/sunrise.jpg',
     );
-  } else if (currentHour >= 6 && currentHour < 12) {
-    //entre 06h et 12h
+  } else if (currentHour >= 7 && currentHour < 12) {
+    //entre 07h et 12h
     return DayStageModel(
       range: DateTimeRange(
-        start: DateTime.now().copyWith(hour: 06, minute: 00),
+        start: DateTime.now().copyWith(hour: 07, minute: 00),
         end: DateTime.now().copyWith(hour: 11, minute: 59),
       ),
       name: 'morning',
       urlImage: 'assets/images/day_stages/morning.jpg',
     );
-  } else if (currentHour == 12) {
-    //entre 12h00 et 12h59
+  } else if (currentHour >= 12 && currentHour < 15) {
+    //entre 12h00 et 14h59
     return DayStageModel(
       range: DateTimeRange(
         start: DateTime.now().copyWith(hour: 12, minute: 00),
-        end: DateTime.now().copyWith(hour: 12, minute: 59),
+        end: DateTime.now().copyWith(hour: 15, minute: 59),
       ),
       name: 'noon',
       urlImage: 'assets/images/day_stages/noon.jpg',
     );
-  } else if (currentHour >= 13 && currentHour < 17) {
-    //entre 13h00 et 17h
+  } else if (currentHour >= 15 && currentHour < 17) {
+    //entre 15h00 et 17h
     return DayStageModel(
       range: DateTimeRange(
         start: DateTime.now().copyWith(hour: 13, minute: 00),

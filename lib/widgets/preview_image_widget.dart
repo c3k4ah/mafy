@@ -25,7 +25,7 @@ class PreviewImageWidget extends StatelessWidget {
           ),
           border: Border.all(
             width: 4,
-            color: whiteColor,
+            color: secondaryColor,
           )),
     );
   }

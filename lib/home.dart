@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
               sigmaY: 10.0,
             ),
             child: Container(
-              color: tertioColor.withOpacity(.2),
+              color: whiteColor.withOpacity(.2),
               padding: const EdgeInsets.symmetric(horizontal: 14),
               child: SafeArea(
                 child: ListView(

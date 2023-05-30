@@ -1,8 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
+import 'package:mafy/models/settings_model.dart';
 
 import '../colors.dart';
+import '../data/settings.data.dart';
 import '../size_inset.dart';
 
 class GeneralSettingsWisget extends StatelessWidget {
@@ -25,9 +27,9 @@ class GeneralSettingsWisget extends StatelessWidget {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: List.generate(
-          4,
-          (index) => Container(
+        children: List.generate(settingList.length, (index) {
+          SettingsModel setting = settingList[index];
+          return Container(
             width: 80,
             margin: const EdgeInsets.symmetric(
               horizontal: 5,
@@ -35,7 +37,7 @@ class GeneralSettingsWisget extends StatelessWidget {
             ),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: primaryColor,
+              color: setting.colors[0],
               borderRadius: BorderRadius.circular(radiusWidget),
             ),
             child: Column(
@@ -47,33 +49,30 @@ class GeneralSettingsWisget extends StatelessWidget {
                   height: 50,
                   margin: const EdgeInsets.all(5),
                   decoration: BoxDecoration(
-                    color: whiteColor,
+                    color: setting.colors[1],
                     shape: BoxShape.circle,
                   ),
                   child: Center(
-                    child: Icon(
-                      Icons.battery_std,
-                      color: primaryColor,
-                    ),
+                    child: setting.icon,
                   ),
                 ),
                 SizedBox(
                   height: 30,
                   width: size.width,
                   child: Text(
-                    'Batterie',
+                    setting.name,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: whiteColor,
-                      fontSize: 13,
+                      color: setting.colors[1],
+                      fontSize: 10,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
               ],
             ),
-          ),
-        ),
+          );
+        }),
       ),
     );
   }
