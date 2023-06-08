@@ -51,7 +51,9 @@ class CalendarWidget extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: whiteColor,
-                    fontSize: 13,
+                    fontFamily: 'Caveat',
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

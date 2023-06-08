@@ -63,6 +63,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/day_stages/
+    - assets/fonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -75,17 +76,31 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: Caveat
+      fonts:
+        - asset: assets/fonts/Caveat/Caveat-VariableFont_wght.ttf
+        - asset: assets/fonts/Caveat/static/Caveat-Regular.ttf
+        - asset: assets/fonts/Caveat/static/Caveat-Medium.ttf
+        - asset: assets/fonts/Caveat/static/Caveat-SemiBold.ttf
+        - asset: assets/fonts/Caveat/static/Caveat-Bold.ttf
+
+    - family: Roboto_Mono
+      fonts:
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf
+        - asset: assets/fonts/Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-Thin.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-ExtraLight.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-Light.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-Regular.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-Medium.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-SemiBold.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-Bold.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-ThinItalic.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-ExtraLightItalic.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-LightItalic.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-Italic.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-MediumItalic.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-SemiBoldItalic.ttf
+        - asset: assets/fonts/Roboto_Mono/static/RobotoMono-BoldItalic.ttf
+
