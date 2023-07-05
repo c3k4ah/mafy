@@ -1,23 +1,17 @@
 import 'dart:ui';
-import 'package:flutter/services.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mafy/data/settings.data.dart';
-import 'package:screen_brightness/screen_brightness.dart';
 
 import 'colors.dart';
-import 'models/settings_model.dart';
 import 'widgets/widget.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
-
 
 class _HomePageState extends State<HomePage> {
   @override
@@ -90,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-                    GeneralSettingsWidget(
+                    GeneralSettingsWisget(
                       size: Size(width, height),
                     )
                   ],
@@ -115,3 +109,43 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+
+
+///////////////////////////
+List<SettingsModel> settingList = [
+    SettingsModel(
+      name: "Wifi",
+      colors: [tertioColor, primaryColor],
+      icon: Icon(
+        Icons.wifi,
+        color: tertioColor,
+      ),
+    ),
+    SettingsModel(
+      name: "Mode avion",
+      colors: [secondaryColor, tertioColor],
+      icon: Icon(
+        Icons.airplanemode_active,
+        color: secondaryColor,
+      ),
+    ),
+    SettingsModel(
+      name: "Bluetooth",
+      colors: [Colors.blue.shade700, whiteColor],
+      icon: Icon(
+        Icons.bluetooth,
+        color: Colors.blue.shade700,
+      ),
+    ),
+     SettingsModel(
+      name: "Luminosité",
+      colors: [whiteColor, secondaryColor],
+      icon: Icon(
+        Icons.light_mode,
+        color: whiteColor,
+      ),
+     
+    ),
+  ];
+  

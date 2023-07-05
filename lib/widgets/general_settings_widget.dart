@@ -1,5 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-
 import 'package:flutter/material.dart';
 import 'package:mafy/models/settings_model.dart';
 
@@ -7,9 +5,9 @@ import '../colors.dart';
 import '../data/settings.data.dart';
 import '../size_inset.dart';
 
-class GeneralSettingsWisget extends StatelessWidget {
+class GeneralSettingsWidget extends StatelessWidget {
   final Size size;
-  const GeneralSettingsWisget({
+  const GeneralSettingsWidget({
     Key? key,
     required this.size,
   }) : super(key: key);

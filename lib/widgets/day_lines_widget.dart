@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mafy/models/daystage_model.dart';
+import 'package:mafy/widgets/weather.dart';
 import 'package:mafy/widgets/widget.dart';
 
 import '../colors.dart';
@@ -58,36 +59,7 @@ class DayLinesWidget extends StatelessWidget {
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              width: size.width,
-              margin: const EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                color: whiteColor,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.sunny,
-                color: secondaryColor,
-              ),
-            ),
-          ),
-          Container(
-            height: 30,
-            width: size.width,
-            decoration: BoxDecoration(
-              borderRadius: bottomRadius(),
-            ),
-            child: Text(
-              '24C',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: whiteColor,
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
+          WeatherW(size: size)
         ],
       ),
     );

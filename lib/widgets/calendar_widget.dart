@@ -1,22 +1,52 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:clean_calendar/clean_calendar.dart';
 import 'package:flutter/material.dart';
-import 'package:mafy/widgets/widget.dart';
 
 import '../colors.dart';
 import '../size_inset.dart';
+import '../utils/quotes.dart';
+import 'border_radius.dart';
 
-class CalendarWidget extends StatelessWidget {
+class CalendarWidget extends StatefulWidget {
   final Size size;
+
   const CalendarWidget({
     Key? key,
     required this.size,
   }) : super(key: key);
 
   @override
+  _CalendarWidgetState createState() => _CalendarWidgetState();
+}
+
+class _CalendarWidgetState extends State<CalendarWidget> {
+  String quote = "";
+  String owner = "";
+  bool working = false;
+
+  @override
+  void initState() {
+    super.initState();
+    fetchQuote();
+  }
+
+  void fetchQuote() async {
+    setState(() {
+      working = true;
+      quote = owner = "";
+    });
+
+    var quoteData = await CalendarLogic.getQuote();
+
+    setState(() {
+      quote = quoteData['quote']!;
+      owner = quoteData['owner']!;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height,
+      height: widget.size.height,
       decoration: BoxDecoration(
         color: whiteColor,
         borderRadius: BorderRadius.circular(radiusWidget),
@@ -31,11 +61,12 @@ class CalendarWidget extends StatelessWidget {
               datePickerCalendarView: DatePickerCalendarView.weekView,
               startWeekday: WeekDay.monday,
               currentDateProperties: DatesProperties(
-                  datesDecoration: DatesDecoration(
-                datesBackgroundColor: tertioColor,
-                datesTextColor: whiteColor,
-                datesBorderColor: darkPrimaryColor,
-              )),
+                datesDecoration: DatesDecoration(
+                  datesBackgroundColor: tertioColor,
+                  datesTextColor: whiteColor,
+                  datesBorderColor: darkPrimaryColor,
+                ),
+              ),
             ),
           ),
           Expanded(
@@ -46,17 +77,32 @@ class CalendarWidget extends StatelessWidget {
                 borderRadius: bottomRadius(),
               ),
               child: Center(
-                child: Text(
-                  "Le succès n'est pas final, l'échec n'est pas fatal. C'est le courage de continuer qui compte",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: whiteColor,
-                    fontSize: 13,
-                  ),
+                child: Column(
+                  children: [
+                    Text(
+                      owner != null ? owner : "",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: whiteColor,
+                        fontSize: 13,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 6),
+                      child: Text(
+                        quote != null ? quote : "",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: whiteColor,
+                          fontSize: 13,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );

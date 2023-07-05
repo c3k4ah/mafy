@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 
 import 'home.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
-  runApp(const MyApp());
+  GeolocatorPlatform.instance
+      .isLocationServiceEnabled()
+      .then((value) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
