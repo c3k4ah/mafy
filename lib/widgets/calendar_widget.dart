@@ -50,7 +50,7 @@ class CalendarWidget extends StatelessWidget {
                   "Le succès n'est pas final, l'échec n'est pas fatal. C'est le courage de continuer qui compte",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: whiteColor,
+                    color: darkPrimaryColor,
                     fontFamily: 'Caveat',
                     fontSize: 15,
                     fontWeight: FontWeight.bold,

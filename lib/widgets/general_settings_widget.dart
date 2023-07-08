@@ -25,50 +25,67 @@ class GeneralSettingsWisget extends StatelessWidget {
         color: whiteColor.withOpacity(.3),
         borderRadius: BorderRadius.circular(radiusWidget),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
         children: List.generate(settingList.length, (index) {
           SettingsModel setting = settingList[index];
           return Container(
             width: 80,
             margin: const EdgeInsets.symmetric(
-              horizontal: 5,
               vertical: 10,
+              horizontal: 5,
             ),
-            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: setting.colors[0],
               borderRadius: BorderRadius.circular(radiusWidget),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
+            child: Stack(
               children: [
-                Container(
-                  width: 50,
-                  height: 50,
-                  margin: const EdgeInsets.all(5),
-                  decoration: BoxDecoration(
-                    color: setting.colors[1],
-                    shape: BoxShape.circle,
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 5,
                   ),
-                  child: Center(
-                    child: setting.icon,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 50,
+                        height: 50,
+                        margin: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          color: setting.colors[1],
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: setting.icon,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                        width: size.width,
+                        child: Text(
+                          setting.name,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: setting.colors[1],
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(
-                  height: 30,
-                  width: size.width,
-                  child: Text(
-                    setting.name,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: setting.colors[1],
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
+                setting.isActive
+                    ? const SizedBox()
+                    : Container(
+                        decoration: BoxDecoration(
+                          color: darkPrimaryColor.withOpacity(.6),
+                          borderRadius: BorderRadius.circular(radiusWidget),
+                        ),
+                      ),
               ],
             ),
           );

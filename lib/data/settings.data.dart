@@ -5,6 +5,7 @@ import '../models/settings_model.dart';
 
 List<SettingsModel> settingList = [
   SettingsModel(
+    isActive: false,
     name: "Wifi",
     colors: [tertioColor, primaryColor],
     icon: Icon(
@@ -13,6 +14,7 @@ List<SettingsModel> settingList = [
     ),
   ),
   SettingsModel(
+    isActive: true,
     name: "Mode avion",
     colors: [secondaryColor, tertioColor],
     icon: Icon(
@@ -21,6 +23,7 @@ List<SettingsModel> settingList = [
     ),
   ),
   SettingsModel(
+    isActive: false,
     name: "Bluetooth",
     colors: [Colors.blue.shade700, whiteColor],
     icon: Icon(
@@ -29,6 +32,7 @@ List<SettingsModel> settingList = [
     ),
   ),
   SettingsModel(
+    isActive: false,
     name: "Luminosité",
     colors: [whiteColor, secondaryColor],
     icon: Icon(
