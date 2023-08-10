@@ -68,7 +68,7 @@ class CalendarWidget extends StatelessWidget {
                     ),
                   );
                 case PrincipalInfoStatus.failure:
-                  return Text(state.error);
+                  return const Text('error');
                 default:
                   return const SizedBox();
               }
